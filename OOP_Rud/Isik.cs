@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Text;
+
+namespace OOP_Rud
+{
+
+    public class Isik
+    {
+        // Privaatne väli - otse ligi ei saa
+        private int sünniaasta;
+
+        // Avalik omadus (Property) automaatse get/set logikaga
+        public string Nimi { get; set; }
+
+        // Kontrollitud omadus
+        public int Sünniaasta
+        {
+            get { return sünniaasta; }
+            set
+            {
+                if (value > 1900 && value <= DateTime.Now.Year)
+                    sünniaasta = value;
+                else
+                    Console.WriteLine("Vigane sünniaasta!");
+
+            }
+
+        }
+
+        // Arvutatud omadus (ainult lugemiseks / getter)
+
+        public int Vanus => sünniaasta == 0 ? 0 : DateTime.Now.Year - sünniaasta;
+
+        public void Tervita()
+        {
+            if (string.IsNullOrEmpty(Nimi) || sünniaasta == 0)
+            {
+                Console.WriteLine("Andmed puuduvad!");
+            }
+            else
+            {
+                Console.WriteLine($"Tere! Minu nimi on {Nimi} ja ma olen {Vanus} aastat vana.");
+            }
+        }
+    }
+}
+
