@@ -12,7 +12,7 @@ namespace OOP_Rud
         public double KeskmineHinne { get; set; }
         public int puudumised { get; set; } = 0;
         public bool KasOnsotsTõend { get; set; } = false;
-
+        public Õppevorm Staatus { get; set; }
         public TööTüüp VäljamakseTüüp { get; set; } = TööTüüp.Palk;
 
         public void Õpi()
