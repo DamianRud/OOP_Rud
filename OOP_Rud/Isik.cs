@@ -44,6 +44,12 @@ namespace OOP_Rud
                 Console.WriteLine($"Tere! Minu nimi on {Nimi} ja ma olen {Vanus} aastat vana.");
             }
         }
+        public virtual void Kirjelda()
+        {
+            Console.WriteLine($"Mina olen {Nimi}.");
+        }
     }
 }
+
+
 
